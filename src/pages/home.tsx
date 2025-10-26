@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Compass, Zap, Heart, BookOpen, Users, ChevronRight, X } from "lucide-react";
 import boyImage from "../Assests/boyImage.jpg";
+import storiesBg from "../Assests/image.png";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -9,25 +10,25 @@ const navItems = [
 ];
 
 const missionFeatures = [
-  { icon: Heart, title: "Bridge Donors", description: "Connect caring individuals directly with verified educational needs." },
-  { icon: BookOpen, title: "Support Education", description: "Provide resources like books, tech, and school supplies for students." },
-  { icon: Users, title: "Empower Communities", description: "Facilitate educational support and mentorship sessions." },
+  { icon: Heart, title: 'Bridge Donors', description: 'Connect kind-hearted Sri Lankans directly with verified local community needs.' },
+  { icon: BookOpen, title: 'Support Rural Schools', description: 'Provide essential items like books, uniforms, and learning devices to students in rural villages.' },
+  { icon: Users, title: 'Empower Communities', description: 'Encourage community projects that support education, health, and youth development.' },
 ];
 
 const successStories = [
-  {
-    emoji: "😊",
-    title: "Jane's Journey",
-    subtitle: "From Struggling to Thriving",
-    text: "With community help, Jane graduated and is now pursuing her dream of becoming a teacher.",
-    cta: "Read Story",
+  { 
+    emoji: '🎒', 
+    title: "Nimali’s New Beginning", 
+    subtitle: "A Village Girl with Big Dreams", 
+    text: "Through Yathra, Nimali from Monaragala received a scholarship for her A/L studies and now studies at the University of Peradeniya.",
+    cta: "Read Story"
   },
-  {
-    emoji: "🎓",
-    title: "Mark's Experience",
-    subtitle: "Scholarship Success",
-    text: "Mark secured full funding through our platform to continue his education at a top university.",
-    cta: "Read Story",
+  { 
+    emoji: '📚', 
+    title: "Kegalle School Revival", 
+    subtitle: "Community-Powered Education", 
+    text: "Donors helped rebuild the computer lab at Kegalle Central College, giving 200+ students access to digital learning.",
+    cta: "Read Story"
   },
 ];
 
@@ -89,7 +90,7 @@ const NavigationBar = () => {
               textDecoration: "none",
             }}
           >
-            HelpConnect
+            Yathra
           </a>
 
           <div style={{ display: "flex", gap: "20px" }}>
@@ -151,7 +152,7 @@ const HeroSection = ({ imageUrl }: HeroSectionProps) => (
     />
     <div style={{ position: "relative", zIndex: 2, color: "white", padding: "20px" }}>
       <h1 style={{ fontSize: "48px", fontWeight: "900", marginBottom: "20px" }}>
-        Welcome to <span style={{ color: "#f97316" }}>HelpConnect</span>
+        Welcome to <span style={{ color: "#f97316" }}>Yathra</span>
       </h1>
       <p
         style={{
@@ -267,14 +268,30 @@ const tagStyle = (color: "green" | "blue" | "yellow") => {
 };
 
 const StoriesSection = () => (
-  <section style={{ padding: "80px 20px", backgroundColor: "white" }}>
-    <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
-      <h2 style={{ color: "#2563eb", textTransform: "uppercase", fontWeight: "600" }}>
-        Real Change
-      </h2>
-      <p style={{ fontSize: "32px", fontWeight: "800", margin: "10px 0" }}>
-        Success Stories That Inspire
-      </p>
+  <section
+    style={{
+      padding: "80px 20px",
+      backgroundImage: `url(${storiesBg})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      position: "relative",
+    }}
+  >
+    {/* translucent overlay to give transparent look and ensure text contrast */}
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        backgroundColor: "rgba(255,255,255,0.62)",
+        backdropFilter: "blur(3px)",
+        zIndex: 0,
+      }}
+    />
+
+    <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center", position: "relative", zIndex: 2 }}>
+      <h2 style={{ color: "#2563eb", textTransform: "uppercase", fontWeight: "600" }}>Real Change</h2>
+      <p style={{ fontSize: "32px", fontWeight: "800", margin: "10px 0" }}>Success Stories That Inspire</p>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "32px", justifyContent: "center" }}>
         {successStories.map((story, i) => (
           <div
@@ -284,10 +301,11 @@ const StoriesSection = () => (
               display: "flex",
               padding: "24px",
               borderRadius: "12px",
-              border: "1px solid #f3f4f6",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+              border: "1px solid rgba(0,0,0,0.06)",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
               textAlign: "left",
               minWidth: "300px",
+              backgroundColor: "rgba(255,255,255,0.85)",
             }}
           >
             <div
@@ -306,9 +324,7 @@ const StoriesSection = () => (
               {story.emoji}
             </div>
             <div>
-              <p style={{ color: "#6b7280", fontSize: "14px", textTransform: "uppercase" }}>
-                {story.subtitle}
-              </p>
+              <p style={{ color: "#6b7280", fontSize: "14px", textTransform: "uppercase" }}>{story.subtitle}</p>
               <h3 style={{ fontSize: "22px", fontWeight: "700" }}>{story.title}</h3>
               <p style={{ color: "#374151", marginBottom: "12px" }}>{story.text}</p>
               <a
@@ -336,9 +352,9 @@ const Footer = () => (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 20px' }}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', alignItems: 'start' }}>
         <div>
-          <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#f97316', marginBottom: '8px' }}>HelpConnect</h3>
+          <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#f97316', marginBottom: '8px' }}>Yathra</h3>
           <p style={{ fontSize: '14px', color: '#9ca3af', marginBottom: '8px' }}>Bringing donors and students for a brighter tomorrow.</p>
-          <p style={{ fontSize: '13px', color: '#9ca3af' }}>Contact us: info@helpconnect.org</p>
+          <p style={{ fontSize: '13px', color: '#9ca3af' }}>Contact us: Yathra.org</p>
         </div>
 
         <div>
@@ -379,7 +395,7 @@ const Footer = () => (
         </div>
       </div>
       <div style={{ marginTop: '20px', borderTop: '1px solid #1f2937', paddingTop: '12px', textAlign: 'center', color: '#6b7280', fontSize: '13px' }}>
-        &copy; {new Date().getFullYear()} HelpConnect. All rights reserved.
+        &copy; {new Date().getFullYear()} Yathra. All rights reserved.
       </div>
     </div>
   </footer>
