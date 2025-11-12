@@ -9,7 +9,7 @@ export default function Navbar() {
       {/* Logo */}
       <div className="logo">handA</div>
 
-      {/* Desktop Links */}
+      
       <div className={`nav-links ${isOpen ? "open" : ""}`}>
         <a href="#home" onClick={() => setIsOpen(false)}>Home</a>
         <a href="#about" onClick={() => setIsOpen(false)}>About</a>
